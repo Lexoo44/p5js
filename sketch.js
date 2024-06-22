@@ -2,9 +2,9 @@ let slider = document.getElementsByClassName("slider");
 let red = 200;
 let green = 90;
 let blue = 100;
-let radius = 300;
-let amount = 3;
-
+let radius = 100;
+let lines = 1;
+let amount = 1;
 document.addEventListener("keydown", (event) => {
   if (event.key == "s") {
     saveImage();
@@ -23,8 +23,8 @@ slider.forEach((element) => {
       case "blue":
         blue = element.value;
         break;
-      case "radius":
-        radius = element.value;
+      case "lines":
+        lines = element.value;
         break;
       case "amount":
         amount = element.value;
@@ -42,10 +42,8 @@ function setup() {
 
 function draw() {
   translate(windowWidth / 2, windowHeight / 2);
-  fill(255);
-  textAlign(CENTER);
   clear();
-  DrawSphere(radius, amount, 0);
+  DrawSphere(radius, amount, true);
 }
 
 function saveImage() {
@@ -57,7 +55,7 @@ function DrawSphere(radius, amount, left) {
     stroke(red, green, blue, 100);
     strokeWeight(2);
     noFill();
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < lines; i++) {
       push();
       if (left) {
         rotate(
@@ -68,9 +66,9 @@ function DrawSphere(radius, amount, left) {
           ((cos(frameCount + ((i * 10) / 1080) * 1000) * 200) / 1000) * 200
         );
       }
-      rect(0, 0, radius, radius, 100);
+      rect(0, 0, radius, radius, radius / 5);
       pop();
     }
-    DrawSphere(radius + 100, amount - 1, left ? 0 : 1);
+    DrawSphere(radius + 100, amount - 1, left ? false : true);
   }
 }

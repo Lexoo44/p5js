@@ -34,3 +34,8 @@ canvas {
   border-radius: 0.5rem;
   cursor: pointer;
 }
+
+p {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
