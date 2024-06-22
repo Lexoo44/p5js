@@ -5,6 +5,12 @@ let blue = 100;
 let radius = 300;
 let amount = 3;
 
+document.addEventListener("keydown", (event) => {
+  if (event.key == "s") {
+    saveImage();
+  }
+});
+
 slider.forEach((element) => {
   element.addEventListener("input", () => {
     switch (element.id) {
@@ -68,17 +74,3 @@ function DrawSphere(radius, amount, left) {
     DrawSphere(radius + 100, amount - 1, left ? 0 : 1);
   }
 }
-
-// if (amount > 0) {
-//   noFill();
-//   stroke(red, green, blue, 100);
-//   for (var a = 0; a < 10; a++) {
-//     push();
-//     rotate(((sin(frameCount + ((a * 10) / 1080) * 1000) * 200) / 1920) * 200);
-//     rect(0, 0, width, height, 100);
-//     pop();
-//   }
-//   DrawSphere(width + radius, height + radius, amount - 1);
-// } else {
-//   return;
-// }
