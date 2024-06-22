@@ -1,0 +1,36 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+canvas {
+  display: block;
+}
+
+.sliderContainer {
+  position: absolute;
+  width: 15rem;
+  top: 2rem;
+  left: 2rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
+}
+
+.slider {
+  width: 100%;
+}
+
+.button {
+  padding: 0.5rem 1rem;
+  background-color: white;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
